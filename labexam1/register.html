@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+    <div class="container">
+        <h1>สมัครสมาชิกผู้ใช้งาน</h1>
+        <form action="login.html">
+            <div class="form-group">
+                <label for="username">ชื่อผู้ใช้ :</label>
+                <input type="text" id="username" name="username" placeholder="ชื่อผู้ใช้">
+            </div>
+            <div class="form-group">
+                <label for="fullname">ชื่อ-นามสกุล :</label>
+                <input type="text" id="fullname" name="fullname" placeholder="ชื่อ-สกุล">
+            </div>
+            <div class="form-group">
+                <label for="phone">เบอร์โทร :</label>
+                <input type="tel" id="phone" name="phone" placeholder="เบอร์โทร">
+            </div>
+            <div class="form-group">
+                <label for="email">อีเมล์ :</label>
+                <input type="email" id="email" name="email" placeholder="อีเมล์">
+            </div>
+            <div class="form-group">
+                <label for="password">รหัสผ่าน :</label>
+                <input type="password" id="password" name="password" placeholder="รหัสผ่าน">
+            </div>
+            <h2>ที่อยู่ปัจจุบัน</h2>
+            <div class="form-group">
+                <label for="address">บ้านเลขที่ :</label>
+                <input type="text" id="address" name="address" placeholder="บ้านเลขที่">
+            </div>
+            <div class="form-group">
+                <label for="province">จังหวัด :</label>
+                <select id="province" name="province">
+                    <option value="">เลือกจังหวัด</option>
+                    <option value="กรุงเทพมหานคร">กรุงเทพมหานคร</option>
+                    <option value="ปทุมธานี">ปทุมธานี</option>
+                    <option value="เชียงใหม่">เชียงใหม่</option>
+                    <option value="ขอนแก่น">ขอนแก่น</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="district">อำเภอ :</label>
+                <select id="district" name="district">
+                    <option value="">เลือกอำเภอ</option>
+                    <option value="เมือง">เมือง</option>
+                    <option value="สามโคก">สามโคก</option>
+                    <option value="สารภี">สารภี</option>
+                    <option value="หางดง">หางดง</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="subdistrict">ตำบล :</label>
+                <select id="subdistrict" name="subdistrict">
+                    <option value="">เลือกตำบล</option>
+                    <option value="ช้างเผือก">ช้างเผือก</option>
+                    <option value="สุเทพ">สุเทพ</option>
+                    <option value="แม่ริม">แม่ริม</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="zipcode">รหัสไปรษณี :</label>
+                <input type="text" id="zipcode" name="zipcode" placeholder="รหัสไปรษณี">
+            </div>
+            <div class="form-group">
+                <label for="address_details">รายละเอียดที่อยู่ :</label>
+                <textarea id="address_details" name="address_details" placeholder="หมู่,ซอย,ถนน"></textarea>
+            </div>
+            <div class="form-group upload-file">
+                <label for="profile_image">อัพโหลดรูปโปรไฟล์ :</label>
+                <input type="file" id="profile_image" name="profile_image" accept="image/*">
+                <span class="file-name">ไม่มีไฟล์ที่เลือก</span>
+            </div>
+            <button type="submit">สมัครสมาชิก</button>
+            <button type="reset">ยกเลิก</button>
+        </form>
+    </div>
+    <script>
+        const fileInput = document.getElementById("profile_image");
+        const fileNameDisplay = document.querySelector(".file-name");
+
+        fileInput.addEventListener("change", () => {
+            const file = fileInput.files[0];
+            if (file) {
+                fileNameDisplay.textContent = file.name;
+            } else {
+                fileNameDisplay.textContent = "ไม่มีไฟล์ที่เลือก";
+            }
+        });
+    </script>
+</body>
+</html>
